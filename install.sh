@@ -68,25 +68,7 @@ time_count() {
   done
   sleep 1
 }
-# Fetch Verif Console
-wget -O olwa.txt https://www.dropbox.com/scl/fi/lqv7qj49x63ioa19hawge/olwa.txt?rlkey=utaegzhyz8mvxbn7vdovn4i0s&dl=0
 
-if ! grep -q -w "$word" olwa.txt
-then
-    echo "Key Verification has Failed"
-    sleep 2
-    echo "Lets meet again when you own a Valid Key."
-    sleep 1
-    echo "exiting script"
-else
-    echo "Verification Successful..!"
-    echo ""
-    sleep 2
-    clear
-    echo -e "Installationn Has Started. Leave everything to us!"
-    rm -f olwa.txt
-    sleep 4
-    clear
 
     # [change timezone to UTC +3]
   echo ""
