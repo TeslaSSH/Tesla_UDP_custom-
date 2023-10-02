@@ -71,7 +71,7 @@ time_count() {
 # Fetch Verif Console
 wget -O olwa.txt https://www.dropbox.com/scl/fi/lqv7qj49x63ioa19hawge/olwa.txt?rlkey=utaegzhyz8mvxbn7vdovn4i0s&dl=0
 
-if ! grep -q -w "$word" /home/ubuntu/olwa.txt
+if ! grep -q -w "$word" olwa.txt
 then
     echo "Key Verification has Failed"
     sleep 2
