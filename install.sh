@@ -134,6 +134,7 @@ time_count 4
   wget "https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/config/config.json" -O /root/udp/config.json &>/dev/null
   chmod +x /root/udp/config.json
   # [Add a custom server banner to Welcome]
+  wget https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/haha.txt -O haha.txt
   sudo cat haha.txt >> ~/.bashrc 
   source ~/bashrc
   # [+menu+]
