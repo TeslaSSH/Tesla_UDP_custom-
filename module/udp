@@ -147,7 +147,7 @@ limiter() {
 
 data_user() {
   cat_users=$(cat "/etc/passwd" | grep 'home' | grep 'false' | grep -v 'syslog' | grep -v '::/' | grep -v 'hwid\|token')
-  [[ -z "$(echo "${cat_users}" | head -1)" ]] && print_center -verm2 "${a96:-NO REGISTERED SSH USERS}" && return 1
+  [[ -z "$(echo "${cat_users}" | head -1)" ]] && print_center -verm2 "${a96:-YOU HAVE NO REGISTERED USERS}" && return 1
   dat_us=$(printf '%-13s%-14s%-10s%-4s%-6s%s' "${a48:-User}" "${a49:-Pass}" "${a97:-Date}" "${a98:-Days}" 'Lmt' 'Stat')
   msg -azu "  $dat_us"
   msg -bar
@@ -518,7 +518,6 @@ new_user() {
 
   add_user "${nameuser}" "${userpass}" "${userdays}" "${limiteuser}"
   clear
-  msg -bar
   if [[ $msj = 0 ]]; then
     print_center -verd "${a45:-User Created Successfully}"
   else
@@ -1010,10 +1009,8 @@ menu_main() {
   msg -bar3
   echo " $(msg -verd "[1]") $(msg -verm2 '>') $(msg -verd "${a6:-UDP Custom}")"
   # echo " $(msg -verd "[2]") $(msg -verm2 '>') $(msg -ama "${a8:-UDP Request}")"
-  msg -bar3
   echo " $(msg -verd "[3]") $(msg -verm2 '>') $(msg -teal "${a11:-Boost UDP Speeds $(msg -verm2 '[!Caution!]')}")"
   echo " $(msg -verd "[4]") $(msg -verm2 '>') $(msg -teal "${a10:-VPS Info}")"
-  msg -bar3
   echo " $(msg -verd "[10]") $(msg -verm2 '>') $(msg -verm2 "${a3:-Uninstall UDP Manager}")"
   exit2home
 
