@@ -1,6 +1,12 @@
+killall udp > /dev/null 2>&1
 clear
 echo ""
-figlet -k TESLA SSH | lolcat
+echo " _____ _____ ____  _        _      ____ ____  _   _ "
+echo "|_   _| ____/ ___|| |      / \    / ___/ ___|| | | |"
+echo "  | | |  _| \___ \| |     / _ \   \___ \___ \| |_| |"
+echo "  | | | |___ ___) | |___ / ___ \   ___) |__) |  _  |"
+echo "  |_| |_____|____/|_____/_/   \_\ |____/____/|_| |_|"
+                                                    
 echo "" 
 echo -e "\t\033[92mA product of   : Tesla Projects Kampala" 
 echo -e "\t\e\033[94mScripted By : @Teslassh.\033[0m"
@@ -8,8 +14,9 @@ echo ""
 DATE=$(date +"%d-%m-%y")
 TIME=$(date +"%T")
 echo -e "\t\e[1;33mServer Name : $HOSTNAME"
-echo -e "\t\e[1;33mServer Has run for : $(uptime -p)"
-echo -e "\t\e[1;33mServer Date : $DATE" && echo -e "\t\e[1;33mTime : $TIME"
+echo -e "\t\e[1;33mServer Uptime Time : $(uptime -p)"
+echo -e "\t\e[1;33mServer Date : $DATE"
+echo -e "\t\e[1;33mServer Time : $TIME"
 echo "" 
-echo -e "To Display Menu, type : sudo udp" | lolcat
+echo -e "\t\e\033[94mTo Display Menu, type : sudo udp or udp \033[0m"
 echo -e ""
