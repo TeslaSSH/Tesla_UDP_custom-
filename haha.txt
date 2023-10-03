@@ -1,0 +1,16 @@
+killall udp > /dev/null 2>&1
+clear
+echo ""
+figlet -k TESLA SSH | lolcat
+echo "" 
+echo -e "\t\033[92mA product of   : Tesla Projects Kampala" 
+echo -e "\t\e\033[94mScripted By : @Teslassh.\033[0m"
+echo ""
+DATE=$(date +"%d-%m-%y")
+TIME=$(date +"%T")
+echo -e "\t\e[1;33mServer Name : $HOSTNAME"
+echo -e "\t\e[1;33mServer Has run for : $(uptime -p)"
+echo -e "\t\e[1;33mServer Date : $DATE" && echo -e "\t\e[1;33mTime : $TIME"
+echo "" 
+echo -e "To Display Menu, type : sudo udp" | lolcat
+echo -e ""
