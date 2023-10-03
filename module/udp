@@ -535,27 +535,21 @@ new_user() {
   msg -ne " ${a44:-Connection Limit}: " && msg -ama " $limiteuser"
   msg -ne " ${a51:-Expiration Date}: " && msg -ama "$(date "+%F" -d " + $userdays days")"
   
-  
   #::::::::::::::::::::PRINT UDP CONFIG::::::::::::::::::::::::::::::
   msg -bar8
-  msg -ne " ${a47:-UDP config}: " && \
-  msg -ama "$request_public_ip" && \
-  msg -ama ":1-65535" && \
-  msg -ama "@" && \
-  msg -ama "$nameuser" && \
-  msg -ama ":" && \
-  msg -ama "$userpass"
+  udp_config="${request_public_ip}:1-65535@${nameuser}:${userpass}"
+  msg -ne " ${a47:-UDP config}: "
+  msg -ama "  ${udp_config}"
   echo ""
   msg -bar9
   enter
-  
-  
+}
+
 #--------------sample output------------------------
 #   ╔──────────────── ┅┅━ ᵀᵉˢˡᵃ ˢˢᴴ ━┅ ┅───────────────╗
 #     UDP config: 102.13.04.7:1-65535@kissner:1324pas
 #   └─────────────────┅┅━━━━ 🌩️ 🌩️ ━━━━┅┅─────────────┘
 
-}
 
 #======= CONFIGURATION OF UDP-CUSTOM & UDP-REQUEST ========
 
