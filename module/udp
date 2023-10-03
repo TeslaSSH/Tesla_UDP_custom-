@@ -526,7 +526,10 @@ new_user() {
     enter
     return 1
   fi
-  msg -bar
+  msg -bar0
+  echo ""
+  print_center -verd "${a230:-User Details}: "
+  msg -bar10
   msg -ne " ${a47:-Server IP}: " && msg -ama "    $request_public_ip"
   msg -ne " ${a47:-Port Range}: " && msg -ama "    1-65535"
   msg -ne " ${a48:-Username}: " && msg -ama "         $nameuser"
@@ -534,20 +537,21 @@ new_user() {
   msg -ne " ${a50:-Number of Days}: " && msg -ama "   $userdays"
   msg -ne " ${a44:-Connection Limit}: " && msg -ama " $limiteuser"
   msg -ne " ${a51:-Expiration Date}: " && msg -ama "$(date "+%F" -d " + $userdays days")"
-  
+  msg -bar11
+  echo ""
+  echo ""
   #::::::::::::::::::::PRINT UDP CONFIG::::::::::::::::::::::::::::::
   msg -bar8
   udp_config="${request_public_ip}:1-65535@${nameuser}:${userpass}"
-  msg -ne " ${a47:-UDP config}: "
+  msg -ne " ${a47:-UDP Link}: "
   msg -ama "  ${udp_config}"
-  echo ""
   msg -bar9
   enter
 }
 
 #--------------sample output------------------------
 #   ╔──────────────── ┅┅━ ᵀᵉˢˡᵃ ˢˢᴴ ━┅ ┅───────────────╗
-#     UDP config: 102.13.04.7:1-65535@kissner:1324pas
+#     UDP Link: 102.13.04.7:1-65535@kissner:1324pas
 #   └─────────────────┅┅━━━━ 🌩️ 🌩️ ━━━━┅┅─────────────┘
 
 
