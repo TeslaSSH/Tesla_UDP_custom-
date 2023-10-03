@@ -15,8 +15,11 @@ sudo apt install -y wget
 sudo apt install -y curl
 sudo apt install -y dos2unix
 sudo apt install -y neofetch
-sudo apt install -y lolcat 
-sudo apt install -y cowsay
+sudo apt install lolcat -y
+# [Add a custom server banner to Welcome]
+wget https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/haha.txt -O haha.txt
+sudo cat haha.txt >> ~/.bashrc 
+source ~/bashrc
 
 source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module')
 
@@ -133,10 +136,6 @@ time_count 4
   # [+config+]
   wget "https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/config/config.json" -O /root/udp/config.json &>/dev/null
   chmod +x /root/udp/config.json
-  # [Add a custom server banner to Welcome]
-  wget https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/haha.txt -O haha.txt
-  sudo cat haha.txt >> ~/.bashrc 
-  source ~/bashrc
   # [+menu+]
   wget -O /usr/bin/udp 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/udp' 
   chmod +x /usr/bin/udp
