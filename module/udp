@@ -1,5 +1,4 @@
 #!/bin/bash
-#Version : ⇢ 2.5-Lite
 udp_dir='/etc/UDPCustom'
 source $udp_dir/module
 
@@ -871,7 +870,7 @@ vps_info() {
 menu_udp_request() {
   make_service
   title "\033[3;40m${a10:-•UDP Custom | UDP Request Manager} by @teslassh•"
-  print_center -ama ' Version: ⇢ 4.6'
+  print_center -ama ' Version: ⇢ 4.7'
   print_center -ama ' UDP REQUEST'
   print_center -ama ' Tunnel App : SocksIP'
   msg -bar
@@ -903,7 +902,7 @@ menu_udp_request() {
 
   echo -e " $(msg -verd "[1]") $(msg -verm2 '>') $(msg -azu "${a2:-Activate/Deactivate UDP-Request}") $state"
   msg -bar0
-  msg -bar3
+  echo ""
   print_center -ama "${a12:-QUICK MENU}"
   msg -bar3
   echo " $(msg -verd "[2]") $(msg -verm2 '>') $(msg -verd "${a6:-Create User}")"
@@ -946,8 +945,6 @@ menu_udp_custom() {
   print_center -ama ' Version: 4.7'
   print_center -ama ' UDP Custom HyBrid'
   print_center -ama ' Client App : HTTP Custom'
-  msg -bar
-
   ram=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
   cpu=$(printf '%-1s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
   # print_center -ama " $(msg -verd 'IP:') $(msg -azu "$request_public_ip")  $(msg -verd 'Ram:') $(msg -azu "$ram") $(msg -verd 'CPU:') $(msg -azu "$cpu")"
@@ -991,11 +988,18 @@ menu_udp_custom() {
 # [MAIN MENU]A
 menu_main() {
   # title "\033[3;40m${a10:-• UDP Custom | UDP Request Manager} •"
-  main_title "\033[3;40m${a10:-• UDP Custom Manager} •"
-  print_center -ama 'Version: ⇢ 3.7'
-  print_center -ama 'by Tesla SSH'
-  msg -bar
+ # main_title "\033[3;40m${a10:-• UDP Custom Manager} •"
+ # print_center -ama 'Version: ⇢ 4.7 '
+ # print_center -ama 'by Tesla SSH'
+ # msg -bar
 
+ # BANNER  2023
+  echo " _____ _____ ____  _        _      ____ ____  _   _ "
+  echo "|_   _| ____/ ___|| |      / \    / ___/ ___|| | | |"
+  echo "  | | |  _| \___ \| |     / _ \   \___ \___ \| |_| |"
+  echo "  | | | |___ ___) | |___ / ___ \   ___) |__) |  _  |"
+  echo "  |_| |_____|____/|_____/_/   \_\ |____/____/|_| |_|"
+  figlet "TESLA SSH" | lolcat                                                 
   # calculate RAM and CPU usage
   ram=$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')
   cpu=$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')
@@ -1005,7 +1009,7 @@ menu_main() {
   msg -bar0
 
   # print options menu
-  print_center -ama "${a12:-CHOOSE UDP CORE}"
+  print_center -ama "${a12:-CHOOSE AN OPTION}"
   msg -bar3
   echo " $(msg -verd "[1]") $(msg -verm2 '>') $(msg -verd "${a6:-UDP Custom}")"
   # echo " $(msg -verd "[2]") $(msg -verm2 '>') $(msg -ama "${a8:-UDP Request}")"
