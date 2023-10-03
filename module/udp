@@ -193,6 +193,8 @@ data_user() {
     fi
     let i++
   done <<<"$cat_users"
+  msg -bar0
+  echo ""
 }
 
 # ======== user Details ====
@@ -452,8 +454,9 @@ new_user() {
   active_users=('' $(show_users))
   msg -bar
   print_center -ama "${a6:-CREATE USER ACCOUNT}"
-  msg -bar
+  msg -bar0
   data_user
+  echo ""
   back
 
   while true; do
@@ -850,7 +853,7 @@ vps_info() {
   memory=$(neofetch | grep "Memory" | cut -d: -f2 | sed 's/ //g')
 
   clear
-  title "\033[3;40m${a10:-•UDP Custom | UDP Request Manager} by @teslassh•"
+  title "\033[3;40m${a10:-•UDP Custom | UDP Hybrid} by @teslassh•"
   print_center -ama ' Version: ⇢ 4.6-Lite'
   print_center -ama ' VPS Info'
   msg -bar
@@ -964,8 +967,7 @@ menu_udp_custom() {
   fi
   print_center -teal "${a576:- 🐞PROJECT error 404 🌐🕸️}"
   msg -bar0
-  msg -bar3
-  print_center -ama "${a12:-↹ UDP MENU}"
+  print_center -ama "${a12:-UDP MENU}"
   msg -bar3
   echo -e " $(msg -verd "[1]") $(msg -verm2 '┈➤') $(msg -verd "${a6:-Create User}")"
   echo -e " $(msg -verd "[2]") $(msg -verm2 '┈➤') $(msg -verm2 "${a7:-Remove User}")"
@@ -1004,6 +1006,8 @@ menu_main() {
   echo -e "  | | |  _| \___ \| |     / _ \   \___ \___ \| |_| |"
   echo -e "  | | | |___ ___) | |___ / ___ \   ___) |__) |  _  |"
   echo -e "  |_| |_____|____/|_____/_/   \_\ |____/____/|_| |_|"                               
+  echo ""
+  msg -bar
   # calculate RAM and CPU usage
   ram=$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')
   cpu=$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')
