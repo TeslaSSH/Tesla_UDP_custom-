@@ -170,7 +170,7 @@ title_sub() {
 
 # completion of tasks🔹home
 enter() {
-  msg -bar
+  
   text="⇒ ${a_enter:-Press enter to continue} ↩"
   if [[ -z $1 ]]; then
     print_center -ama "$text"
