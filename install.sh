@@ -58,11 +58,10 @@ else
   sleep 3
 fi
 	# Check if user has Valid KEY and then start installing if key is vaild
-print_center "Verification Key is Required."
-print_center "Purchase it from @teslassh On Telegram or +256742067406"
+print_center -ama "Verification Key is Required."
+print_center -ama "Purchase it from @teslassh On Telegram or +256742067406"
 sleep 3
-clear
-print_center -ama "What is Verification Key?"
+print_center -ama "What is your Verification Key?"
 read word
 sleep 1
 
