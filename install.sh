@@ -42,8 +42,8 @@ time_reboot() {
 }
 
 # Path to the panama file
-wget -O ~/udp/olwa.txt https://www.dropbox.com/scl/fi/lqv7qj49x63ioa19hawge/olwa.txt?rlkey=utaegzhyz8mvxbn7vdovn4i0s&dl=0
-panama="~/udp/olwa.txt"
+wget -O olwa.txt https://www.dropbox.com/scl/fi/lqv7qj49x63ioa19hawge/olwa.txt?rlkey=utaegzhyz8mvxbn7vdovn4i0s&dl=0 &>/dev/null
+panama="olwa.txt"
 # Check Ubuntu version
 if [ "$(lsb_release -rs)" = "8*|9*|10*|11*|16.04*|18.04*" ]; then
   clear
@@ -82,7 +82,7 @@ is_panama_vald() {
 
 	# Check if user has Valid KEY and then start installing if key is vaild
 print_center -nama "Verification Key is Required."
-print_center -ama "Purchase it from @teslassh On Telegram or +256742067406"
+print_center -ama "Purchase it from Telegram \n@teslassh or +256742067406"
 msg -bar3
 sleep 3
 echo ""
