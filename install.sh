@@ -15,11 +15,12 @@ sudo apt install -y wget
 sudo apt install -y curl
 sudo apt install -y dos2unix
 sudo apt install -y neofetch
-#sudo apt install lolcat -y
+sudo apt install lolcat -y
 # [Add a custom server banner to Welcome]
 wget https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/haha.sh -O haha.sh
-chmod +x haha.sh
-echo "bash /root/haha.sh" >> ~/.bashrc 
+chmod u+x haha.sh
+
+echo "sudo bash /root/haha.sh" >> ~/.bashrc 
 source ~/.bashrc
 
 source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module')
