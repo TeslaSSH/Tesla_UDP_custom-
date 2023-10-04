@@ -78,6 +78,11 @@ time_count() {
   sleep 1
 }
 time_count 4
+print_center -ama "╭════════════════════════════╮"
+print_center -ama "├⇝Verification Successful⇴ "
+print_center -ama "├⇝Tesla Says⇴ Thank you! "
+print_center -ama "╰════════════════════════════╯"
+sleep 3
 
     # [change timezone to UTC +3]
   echo ""
