@@ -34,7 +34,7 @@ time_reboot() {
     sleep 1
     : $((REBOOT_TIMEOUT--))
   done
-  rm -rf /home/ubuntu/install.sh
+  rm -f install.sh
   sleep 1
   echo -e "\033[01;31m\033[1;33m More Updates, Follow Us On \033[1;31m(\033[1;36mTelegram\033[1;31m): \033[1;37mUDP CUSTOM\033[0m"
   sleep 2
@@ -150,7 +150,7 @@ time_count 4
   print_center -ama "${a103:-setting up, please wait...}"
   sleep 3
   title "${a102:-Installation Successful}"
-  print_center -ama "${a103:-  To show menu type: \nudp\n}"
+  print_center -ama "${a103:-  To see menu, type: \nudp\n}"
   msg -bar
   time_reboot 5
 fi

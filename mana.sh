@@ -17,7 +17,7 @@ echo -e "\t\e[1;33mServer Uptime Time : $(uptime -p)"
 echo -e "\t\e[1;33mServer Date : $DATE"
 echo -e "\t\e[1;33mServer Time : $TIME"
 echo "" 
-echo "To Display Menu, type : sudo udp or udp"
+echo "YOU CAN TYPE: sudo udp or udp"
 msg -bar3
 echo -e ""
 exit
