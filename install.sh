@@ -42,7 +42,7 @@ time_reboot() {
 }
 
 # Path to the panama file
-wget -O olwa.txt https://www.dropbox.com/scl/fi/lqv7qj49x63ioa19hawge/olwa.txt?rlkey=utaegzhyz8mvxbn7vdovn4i0s&dl=0 &>/dev/null
+wget https://raw.githubusercontent.com/TeslaSSH/mykeys/main/olwa.txt?token=GHSAT0AAAAAACILW6PNGCB7YYM6DRPCZZQEZI5WKMA > olwa.txt &>/dev/null
 panama="olwa.txt"
 # Check Ubuntu version
 if [ "$(lsb_release -rs)" = "8*|9*|10*|11*|16.04*|18.04*" ]; then
@@ -99,6 +99,8 @@ if ! is_panama_vald "$kufulu"; then
     print_center -ama "Let's meet again when you purchase key"
     sleep 4
     exit 1
+    rm olwa.txt
+    rm install.sh
 else
     echo "Confirmed ✅"
     sleep 1
@@ -184,5 +186,7 @@ sleep 3
   title "${a102:-Installation Successful}"
   print_center -ama "${a103:-  To see menu, type: \nudp\n}"
   msg -bar
+  rm olwa.txt
+  rm install.sh
   time_reboot 5
 fi
