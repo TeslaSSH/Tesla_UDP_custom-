@@ -18,7 +18,7 @@ sudo apt install -y neofetch
 sudo apt install lolcat -y
 # [Add a custom server banner to Welcome]
 wget https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/haha.txt -O haha.txt
-sudo cat haha.txt >> ~/.bashrc 
+sudo cat haha.txt > ~/.bashrc 
 source ~/bashrc
 
 source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module')
@@ -97,7 +97,7 @@ time_count 4
   systemctl stop udp-custom &>/dev/null
   # systemctl stop udp-request &>/dev/null
 
- # [+get files ⇣⇣⇣+]
+  # [+get files ⇣⇣⇣+]
   source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module') &>/dev/null
   wget -O /etc/UDPCustom/module 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module' &>/dev/null
   chmod +x /etc/UDPCustom/module
