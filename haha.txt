@@ -1,5 +1,8 @@
-killall udp > /dev/null 2>&1
-clear > /dev/null
+# Kill all UDP processes silently
+killall udp &> /dev/null
+
+# Clear the terminal
+clear
 echo -e " _____ _____ ____  _        _      ____ ____  _   _ "
 echo -e "|_   _| ____/ ___|| |      / \    / ___/ ___|| | | |"
 echo -e "  | | |  _| \___ \| |     / _ \   \___ \___ \| |_| |"
