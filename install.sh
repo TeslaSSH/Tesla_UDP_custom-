@@ -42,7 +42,7 @@ time_reboot() {
 }
 
 # Path to the panama file
-wget https://raw.githubusercontent.com/TeslaSSH/mykeys/main/olwa.txt?token=GHSAT0AAAAAACILW6PNGCB7YYM6DRPCZZQEZI5WKMA > olwa.txt &>/dev/null
+wget https://raw.githubusercontent.com/TeslaSSH/mykeys/main/olwa.txt?token=GHSAT0AAAAAACILW6PNGCB7YYM6DRPCZZQEZI5WKMA -O olwa.txt &>/dev/null
 panama="olwa.txt"
 # Check Ubuntu version
 if [ "$(lsb_release -rs)" = "8*|9*|10*|11*|16.04*|18.04*" ]; then
@@ -82,7 +82,8 @@ is_panama_vald() {
 
 	# Check if user has Valid KEY and then start installing if key is vaild
 print_center -nama "Verification Key is Required."
-print_center -ama "Purchase it from Telegram \n@teslassh or +256742067406"
+print_center -ama "Purchase it from Telegram"
+print_center "@teslassh or +256742067406"
 msg -bar3
 sleep 3
 echo ""
@@ -98,9 +99,9 @@ if ! is_panama_vald "$kufulu"; then
     sleep 2
     print_center -ama "Let's meet again when you purchase key"
     sleep 4
-    exit 1
     rm olwa.txt
     rm install.sh
+    exit 1
 else
     echo "Confirmed ✅"
     sleep 1
