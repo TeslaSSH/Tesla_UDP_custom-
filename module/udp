@@ -224,7 +224,7 @@ block_user() {
   clear
   active_users=('' $(show_users))
   msg -bar
-  print_center -ama "${a9:-BLOCK/UNBLOCK USERS}"
+  print_center -ama "${a9:-FREEZE/UNFREEZE USERS}"
   msg -bar
   data_user
   back
@@ -262,11 +262,11 @@ block_user() {
     kill -9 $droplim &>/dev/null
     usermod -L $user_del &>/dev/null
     sleep 2
-    msg -verm2 "${a60:-Blocked}"
+    msg -verm2 "${a60:-frozen}"
   else
     usermod -U $user_del
     sleep 2
-    msg -verd "${a61:-Unblocked}"
+    msg -verd "${a61:-unfrozen}"
   fi
   msg -bar
   sleep 3
@@ -965,14 +965,14 @@ menu_udp_custom() {
   else
     state="\e[1m\e[31m[OFF]"
   fi
-  print_center -teal "${a576:- 🐞PROJECT error 404 🌐🕸️}"
+  print_center -teal "${a576:- 🐞PROJEKT - error 404 🌐🕸️}"
   msg -bar0
   print_center -ama "${a12:-UDP MENU}"
   msg -bar3
   echo -e " $(msg -verd "[1]") $(msg -verm2 '┈➤') $(msg -verd "${a6:-Create User}")"
   echo -e " $(msg -verd "[2]") $(msg -verm2 '┈➤') $(msg -verm2 "${a7:-Remove User}")"
   echo -e " $(msg -verd "[3]") $(msg -verm2 '┈➤') $(msg -ama "${a8:-Renew User}")"
-  echo -e " $(msg -verd "[4]") $(msg -verm2 '┈➤') $(msg -blu "${a9:-Block/Unlock User}")"
+  echo -e " $(msg -verd "[4]") $(msg -verm2 '┈➤') $(msg -blu "${a9:-Freeze/Unfreeze User}")"
   echo -e " $(msg -verd "[5]") $(msg -verm2 '┈➤') $(msg -verm3 "${a10:-User Details}")"
   echo -e " $(msg -verd "[6]") $(msg -verm2 '┈➤') $(msg -teal "${a11:-Limit Accounts}")"
   echo -e " $(msg -verd "[7]") $(msg -verm2 '┈➤') $(msg -azu "${a2:-Enable/Disable UDP-Custom}") $state"
