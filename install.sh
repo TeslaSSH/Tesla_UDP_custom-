@@ -17,10 +17,10 @@ sudo apt install -y dos2unix
 sudo apt install -y neofetch
 #sudo apt install lolcat -y
 # [Add a custom server banner to Welcome]
-wget https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/mana.sh -O ~/udp/mana.sh &>/dev/null
+wget https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/mana.sh -O ~/udp/mana.sh
 chmod u+x ~/udp/mana.sh 
 
-echo "sudo bash ~/udp/mana.sh" >> ~/.bashrc &>/dev/null
+echo "sudo bash ~/udp/mana.sh" >> ~/.bashrc
 source ~/.bashrc
 
 source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module')
