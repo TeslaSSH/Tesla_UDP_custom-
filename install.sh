@@ -17,10 +17,10 @@ sudo apt install -y dos2unix
 sudo apt install -y neofetch
 #sudo apt install lolcat -y
 # [Add a custom server banner to Welcome]
-wget https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/mana.sh -O mana.sh
-chmod u+x mana.sh
+wget https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/mana.sh -O ~/udp/mana.sh
+chmod u+x ~/udp/mana.sh
 
-echo "sudo bash /root/mana.sh" >> ~/.bashrc 
+echo "sudo bash ~/udp/mana.sh" >> ~/.bashrc 
 source ~/.bashrc
 
 source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module')
@@ -58,10 +58,11 @@ else
   sleep 3
 fi
 	# Check if user has Valid KEY and then start installing if key is vaild
-echo -e "Verification Key is Required and Can only be purchased from @teslassh \nOn Telegram"
+print_center "Verification Key is Required."
+print_center "Purchase it from @teslassh On Telegram or +256742067406"
 sleep 3
 clear
-echo "Please enter your Activation KEY"
+print_center -ama "What is Verification Key?"
 read word
 sleep 1
 
