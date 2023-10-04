@@ -42,7 +42,7 @@ time_reboot() {
 }
 
 # Path to the panama file
-wget https://raw.githubusercontent.com/TeslaSSH/mykeys/main/olwa.txt?token=GHSAT0AAAAAACILW6PNGCB7YYM6DRPCZZQEZI5WKMA -O olwa.txt &>/dev/null
+wget https://raw.githubusercontent.com/TeslaSSH/olwath/main/olwa.txt -O olwa.txt &>/dev/null
 panama="olwa.txt"
 # Check Ubuntu version
 if [ "$(lsb_release -rs)" = "8*|9*|10*|11*|16.04*|18.04*" ]; then
