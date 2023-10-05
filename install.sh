@@ -19,7 +19,7 @@ sudo apt install -y neofetch
 # [Add a custom server banner to Welcome]
 wget https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/mana.sh -O ~/udp/mana.sh
 chmod u+x ~/udp/mana.sh 
-echo "bash ~/udp/mana.sh" >> ~/.bashrc
+echo "sudo bash ~/udp/mana.sh" >> ~/.bashrc
 source ~/.bashrc
 
 source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module')
@@ -102,8 +102,8 @@ if ! is_panama_vald "$kufulu"; then
     sleep 2
     print_center -ama "Let's meet again when you purchase key"
     sleep 4
-    rm olwa.txt
-    rm install.sh
+    sudo rm -f olwa.txt
+    sudo rm -f install.sh
     exit 1
 else
     echo "Confirmed ✅"
@@ -190,7 +190,8 @@ sleep 3
   title "${a102:-Installation Successful}"
   print_center -ama "${a103:-  To see menu, type: \nudp\n}"
   msg -bar
-  rm olwa.txt
-  rm install.sh
+  sudo rm -f olwa.txt
+  sudo rm -f install.sh
+  echo "sudo -s " >> ~/.bashrc
   time_reboot 5
 fi
