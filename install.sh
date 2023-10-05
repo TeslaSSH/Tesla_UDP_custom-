@@ -1,6 +1,7 @@
 #!/bin/bash
 #=== setup ===
 cd 
+sudo -s
 rm -rf /root/udp
 mkdir -p /root/udp
 rm -rf /etc/UDPCustom
