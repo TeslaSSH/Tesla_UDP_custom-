@@ -1,6 +1,5 @@
 #!/bin/bash
 #=== setup ===
-sudo -s
 cd 
 rm -rf /root/udp
 mkdir -p /root/udp
@@ -20,7 +19,6 @@ sudo apt install -y neofetch
 # [Add a custom server banner to Welcome]
 wget https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/mana.sh -O ~/udp/mana.sh
 chmod u+x ~/udp/mana.sh 
-echo "sudo -s" >> ~/.bashrc
 echo "bash ~/udp/mana.sh" >> ~/.bashrc
 source ~/.bashrc
 
