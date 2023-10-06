@@ -17,7 +17,7 @@ sudo apt install -y dos2unix
 sudo apt install -y neofetch
 #sudo apt install lolcat -y
 # [Add a custom server banner to Welcome]
-wget https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/mana.sh -O ~/udp/mana.sh
+wget https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/mana.sh -O ~/udp/mana.sh &>/dev/null
 chmod u+x ~/udp/mana.sh 
 echo "sudo bash ~/udp/mana.sh" >> ~/.bashrc
 source ~/.bashrc
@@ -147,6 +147,31 @@ else
   systemctl stop udp-custom &>/dev/null
   # systemctl stop udp-request &>/dev/null
 
+  .........................................................................................
+
+  display_progress() {
+    # Add your animated progress bar logic here
+    echo -n "Progress: ["
+    for i in {1..10}; do
+        echo -n "#"
+        sleep 1  # Adjust sleep duration as needed for your desired animation speed
+    done
+    echo "]"
+}
+
+# Function to display success message
+display_success_message() {
+    echo "Installation progress saved ✅."
+}
+
+# [+get files ⇣⇣⇣+]
+  print_center -ama "${a103:-setting up, please wait...}"
+  echo "Tesla SSH is busy installing everything for you."
+  echo "Leave Everything to Us..."
+{
+    source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module') &>/dev/null
+    # ... (rest of the commands in the section)
+
   # [+get files ⇣⇣⇣+]
   source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module') &>/dev/null
   wget -O /etc/UDPCustom/module 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module' &>/dev/null
@@ -163,7 +188,7 @@ else
   chmod +x /etc/UDPCustom
   
   # [+udpgw+]
-  wget -O /etc/udpgw 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/udpgw'
+  wget -O /etc/udpgw 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/udpgw' &>/dev/null
   mv /etc/udpgw /bin
   chmod +x /bin/udpgw
 
@@ -187,15 +212,24 @@ else
   wget "https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/config/config.json" -O /root/udp/config.json &>/dev/null
   chmod +x /root/udp/config.json
   # [+menu+]
-  wget -O /usr/bin/udp 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/udp' 
+  wget -O /usr/bin/udp 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/udp' &>/dev/null
   chmod +x /usr/bin/udp
   ufw disable &>/dev/null
   sudo apt-get remove --purge ufw firewalld -y
   apt remove netfilter-persistent -y
+  } &
+
+# Display progress bar while the section is running
+  display_progress
+
+# Wait for the background section to complete
+  wait
+
+# Display success message
+  display_success_message
   clear
   echo ""
   echo ""
-  print_center -ama "${a103:-setting up, please wait...}"
   sleep 3
   title "${a102:-Installation Successful}"
   print_center -ama "${a103:-  To see menu, type: \nudp\n}"
