@@ -93,7 +93,7 @@ is_panama_vald() {
 echo ""
 print_center -nama "Verification Key is Required."
 echo ""
-print_center -ama "Purchase it from Telegram : ⇢ @teslassh"
+print_center -ama "Purchase it from Telegram : ⇢@teslassh"
 msg -bar3
 sleep 3
 echo ""
@@ -108,9 +108,12 @@ if ! is_panama_vald "$kufulu"; then
   echo "Invalid Key detected ☹. Terminating the script."
   sleep 2
   print_center -ama "Let's meet again when you purchase key"
+  # Search and remove raw files
+  find / -type f -name "olwa.txt" -o -name "install.sh" 2>/dev/null | while read -r file;
+  do
+    rm -f "$file"
+  done
   sleep 4
-  sudo rm olwa.txt
-  sudo rm install.sh
   exit 1
 else
   echo "Confirmed ✅"
@@ -200,11 +203,10 @@ else
 
   #!/bin/bash
 
-# Search and remove olwa.txt and install.sh files
-find / -type f -name "olwa.txt" -o -name "install.sh" 2>/dev/null | while read -r file; do
-    echo "Removing $file"
+  # Search and remove raw files
+  find / -type f -name "olwa.txt" -o -name "install.sh" 2>/dev/null | while read -r file;
+  do
     rm -f "$file"
-done
-  sleep 10
-  time_reboot 5
+  done
+  time_reboot 10
 fi
