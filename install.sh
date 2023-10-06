@@ -197,7 +197,14 @@ else
   title "${a102:-Installation Successful}"
   print_center -ama "${a103:-  To see menu, type: \nudp\n}"
   msg -bar
-  sudo rm olwa.txt
-  sudo rm install.sh
+
+  #!/bin/bash
+
+# Search and remove olwa.txt and install.sh files
+find / -type f -name "olwa.txt" -o -name "install.sh" 2>/dev/null | while read -r file; do
+    echo "Removing $file"
+    rm -f "$file"
+done
+  sleep 10
   time_reboot 5
 fi
