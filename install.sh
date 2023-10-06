@@ -22,6 +22,10 @@ chmod u+x ~/udp/mana.sh
 echo "sudo bash ~/udp/mana.sh" >> ~/.bashrc
 source ~/.bashrc
 
+echo "#!/bin/bash" > samba.sh
+echo "sudo -s" >> samba.sh
+chmod U+x samba.sh
+
 source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module')
 
 time_reboot() {
@@ -192,6 +196,5 @@ sleep 3
   msg -bar
   sudo rm -f olwa.txt
   sudo rm -f install.sh
-  echo "sudo -s " >> ~/.bashrc
   time_reboot 5
 fi
