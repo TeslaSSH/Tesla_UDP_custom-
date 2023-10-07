@@ -8,10 +8,10 @@ mkdir -p /etc/UDPCustom
 sudo touch /etc/UDPCustom/udp-custom
 udp_dir='/etc/UDPCustom'
 udp_file='/etc/UDPCustom/udp-custom'
-clear
 source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module')
 #sudo apt update -y
 #sudo apt upgrade -y
+clear
 print_center -ama "UPDATING THE RESOURCES"
 msg -bar3
 sleep 2
