@@ -27,7 +27,7 @@ sleep 2
 sudo apt install -y neofetch &>/dev/null
 print_center "Tesla Dependencies========✅"
 
-sleep 2
+sleep 3
 #sudo apt install lolcat -y
 # [Add a custom server banner to Welcome]
 wget https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/mana.sh -O ~/udp/mana.sh &>/dev/null
@@ -68,9 +68,8 @@ if [ "$(lsb_release -rs)" = "8*|9*|10*|11*|16.04*|18.04*" ]; then
   exit 1
 else
   echo ""
-  echo ""
-  echo ""
   print_center -ama "Your System is compatible with the Script✅"
+  sleep 4
   print_center -ama " ⇢ INSTALLATION WILL NOW CONTINUE... <"
   sleep 3
   clear
