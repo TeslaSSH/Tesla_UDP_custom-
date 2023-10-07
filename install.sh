@@ -14,17 +14,17 @@ source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-
 print_center -ama "UPDATING THE RESOURCES"
 msg -bar3
 sleep 2
-sudo apt install -y wget
-print_center "wget ✅"
+sudo apt install -y wget &>/dev/null
+print_center "wget========✅"
 sleep 2
-sudo apt install -y curl
-print_center "curl ✅"
+sudo apt install -y curl &>/dev/null
+print_center "curl========✅"
 sleep 2
-sudo apt install -y dos2unix
-print_center "udpBoost ✅"
+sudo apt install -y dos2unix &>/dev/null
+print_center "udpBoost========✅"
 sleep 2
-sudo apt install -y neofetch
-print_center "Tesla Dependencies ✅"
+sudo apt install -y neofetch &>/dev/null
+print_center "Tesla Dependencies========✅"
 sleep 2
 #sudo apt install lolcat -y
 # [Add a custom server banner to Welcome]
