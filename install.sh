@@ -101,7 +101,7 @@ is_panama_vald() {
 echo ""
 print_center -nama "Verification Key is Required."
 echo ""
-print_center -ama "Purchase it from Telegram : ⇢@teslassh"
+print_center -ama "Purchase it from Telegram : ⇢@teslassh. "
 msg -bar3
 sleep 3
 echo ""
