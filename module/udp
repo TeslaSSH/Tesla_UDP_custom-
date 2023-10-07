@@ -965,7 +965,7 @@ menu_udp_custom() {
   else
     state="\e[1m\e[31m[OFF]"
   fi
-  print_center -teal "${a576:- 🐞PROJEKT - error 404 🌐🕸️}"
+  print_center -teal "${a576:- 🐞PROJEKT - Data Heist 🌐🕸️}"
   msg -bar0
   print_center -ama "${a12:-UDP MENU}"
   msg -bar3
