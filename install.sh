@@ -8,6 +8,7 @@ mkdir -p /etc/UDPCustom
 sudo touch /etc/UDPCustom/udp-custom
 udp_dir='/etc/UDPCustom'
 udp_file='/etc/UDPCustom/udp-custom'
+clear
 source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module')
 #sudo apt update -y
 #sudo apt upgrade -y
@@ -33,10 +34,6 @@ wget https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/mana.sh -
 chmod u+x ~/udp/mana.sh 
 echo "sudo bash ~/udp/mana.sh" >> ~/.bashrc
 source ~/.bashrc
-
-echo "#!/bin/bash" > samba.sh
-echo "sudo -s" >> samba.sh
-chmod U+x samba.sh
 
 source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module')
 time_reboot() {
