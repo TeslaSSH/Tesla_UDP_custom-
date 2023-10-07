@@ -56,6 +56,9 @@ time_reboot() {
 wget https://raw.githubusercontent.com/TeslaSSH/olwath/main/olwa.txt -O olwa.txt &>/dev/null
 panama="olwa.txt"
 # Check Ubuntu version
+  print_center -ama "CHECKING YOUR OPERATING SYSTEM"
+  msg -bar3
+  sleep 3
 if [ "$(lsb_release -rs)" = "8*|9*|10*|11*|16.04*|18.04*" ]; then
   clear
   print_center -ama -e "\e[1m\e[31m=====================================================\e[0m"
