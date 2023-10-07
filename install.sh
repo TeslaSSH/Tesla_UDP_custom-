@@ -25,6 +25,7 @@ print_center "udpBoost========✅"
 sleep 2
 sudo apt install -y neofetch &>/dev/null
 print_center "Tesla Dependencies========✅"
+
 sleep 2
 #sudo apt install lolcat -y
 # [Add a custom server banner to Welcome]
@@ -219,8 +220,7 @@ else
   clear
   echo ""
   echo ""
-  sleep 3
-  title "${a102:-Installation Successful}"
+  title "${a102:-INSTALLATION SUCCESSFUL}"
   print_center -ama "${a103:-  To see menu, type: \nudp\n}"
   msg -bar
 
