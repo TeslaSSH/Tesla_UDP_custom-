@@ -179,12 +179,12 @@ display_success_message() {
   wget -O /etc/UDPCustom/module 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module' &>/dev/null
   chmod +x /etc/UDPCustom/module
 
-  wget "https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/bin/udp-custom-linux-amd64" -O /root/udp/udp-custom 
+  wget "https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/bin/udp-custom-linux-amd64" -O /root/udp/udp-custom &>/dev/null
   # wget "https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/bin/udp-request-linux-amd64" -O /usr/bin/udp-request &>/dev/null
   chmod +x /root/udp/udp-custom
   # chmod +x /usr/bin/udp-request
 
-  wget -O /etc/limiter.sh 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/limiter.sh'
+  wget -O /etc/limiter.sh 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/limiter.sh' &>/dev/null
   cp /etc/limiter.sh /etc/UDPCustom
   chmod +x /etc/limiter.sh
   chmod +x /etc/UDPCustom
