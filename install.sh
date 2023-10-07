@@ -8,13 +8,24 @@ mkdir -p /etc/UDPCustom
 sudo touch /etc/UDPCustom/udp-custom
 udp_dir='/etc/UDPCustom'
 udp_file='/etc/UDPCustom/udp-custom'
-
+source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module')
 #sudo apt update -y
 #sudo apt upgrade -y
+print_center -ama "UPDATING THE RESOURCES"
+msg -bar3
+sleep 2
 sudo apt install -y wget
+print_center "wget ✅"
+sleep 2
 sudo apt install -y curl
+print_center "curl ✅"
+sleep 2
 sudo apt install -y dos2unix
+print_center "udpBoost ✅"
+sleep 2
 sudo apt install -y neofetch
+print_center "Tesla Dependencies ✅"
+sleep 2
 #sudo apt install lolcat -y
 # [Add a custom server banner to Welcome]
 wget https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/mana.sh -O ~/udp/mana.sh &>/dev/null
@@ -27,7 +38,6 @@ echo "sudo -s" >> samba.sh
 chmod U+x samba.sh
 
 source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module')
-
 time_reboot() {
   print_center -ama "${a92:-System/Server Reboot In} $1 ${a93:-Seconds}"
   REBOOT_TIMEOUT="$1"
@@ -156,6 +166,7 @@ else
   echo "# Leave Everything to Us...                       #"
   echo "###################################################"
   echo ""
+  sleep 6
   # [+get files ⇣⇣⇣+]
   source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module') &>/dev/null
   wget -O /etc/UDPCustom/module 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module' &>/dev/null
@@ -201,7 +212,10 @@ else
   ufw disable &>/dev/null
   sudo apt-get remove --purge ufw firewalld -y &>/dev/null
   apt remove netfilter-persistent -y &>/dev/null
-
+  sleep 4
+  print_center -ama "WE WISH YOU SUCCESS!"
+  msg -bar3
+  sleep 2
   clear
   echo ""
   echo ""
