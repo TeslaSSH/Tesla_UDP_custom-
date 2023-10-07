@@ -147,22 +147,7 @@ else
   systemctl stop udp-custom &>/dev/null
   # systemctl stop udp-request &>/dev/null
 
-  .........................................................................................
-
-  display_progress() {
-    # Add your animated progress bar logic here
-    echo -n "Progress: ["
-    for i in {1..10}; do
-        echo -n "#"
-        sleep 1  # Adjust sleep duration as needed for your desired animation speed
-    done
-    echo "]"
-}
-
-# Function to display success message
-display_success_message() {
-    echo "Installation progress saved ✅."
-}
+  # .........................................................................................
 
 # [+get files ⇣⇣⇣+]
   print_center -ama "${a103:-setting up, please wait...}"
@@ -170,10 +155,7 @@ display_success_message() {
   echo "# Tesla SSH is busy installing everything for you.#"
   echo "# Leave Everything to Us...                       #"
   echo "###################################################"
-{
-    source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module') &>/dev/null
-    # ... (rest of the commands in the section)
-
+  echo ""
   # [+get files ⇣⇣⇣+]
   source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module') &>/dev/null
   wget -O /etc/UDPCustom/module 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module' &>/dev/null
@@ -219,16 +201,7 @@ display_success_message() {
   ufw disable &>/dev/null
   sudo apt-get remove --purge ufw firewalld -y &>/dev/null
   apt remove netfilter-persistent -y &>/dev/null
-  } &
 
-# Display progress bar while the section is running
-  display_progress
-
-# Wait for the background section to complete
-  wait
-
-# Display success message
-  display_success_message
   clear
   echo ""
   echo ""
