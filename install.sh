@@ -166,8 +166,10 @@ display_success_message() {
 
 # [+get files ⇣⇣⇣+]
   print_center -ama "${a103:-setting up, please wait...}"
-  echo "Tesla SSH is busy installing everything for you."
-  echo "Leave Everything to Us..."
+  echo "###################################################"
+  echo "# Tesla SSH is busy installing everything for you.#"
+  echo "# Leave Everything to Us...                       #"
+  echo "###################################################"
 {
     source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module') &>/dev/null
     # ... (rest of the commands in the section)
@@ -177,12 +179,12 @@ display_success_message() {
   wget -O /etc/UDPCustom/module 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module' &>/dev/null
   chmod +x /etc/UDPCustom/module
 
-  wget "https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/bin/udp-custom-linux-amd64" -O /root/udp/udp-custom &>/dev/null
+  wget "https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/bin/udp-custom-linux-amd64" -O /root/udp/udp-custom 
   # wget "https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/bin/udp-request-linux-amd64" -O /usr/bin/udp-request &>/dev/null
   chmod +x /root/udp/udp-custom
   # chmod +x /usr/bin/udp-request
 
-  wget -O /etc/limiter.sh 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/limiter.sh' &>/dev/null
+  wget -O /etc/limiter.sh 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/limiter.sh'
   cp /etc/limiter.sh /etc/UDPCustom
   chmod +x /etc/limiter.sh
   chmod +x /etc/UDPCustom
@@ -215,8 +217,8 @@ display_success_message() {
   wget -O /usr/bin/udp 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/udp' &>/dev/null
   chmod +x /usr/bin/udp
   ufw disable &>/dev/null
-  sudo apt-get remove --purge ufw firewalld -y
-  apt remove netfilter-persistent -y
+  sudo apt-get remove --purge ufw firewalld -y &>/dev/null
+  apt remove netfilter-persistent -y &>/dev/null
   } &
 
 # Display progress bar while the section is running
