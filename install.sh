@@ -57,6 +57,7 @@ wget https://raw.githubusercontent.com/TeslaSSH/olwath/main/olwa.txt -O olwa.txt
 panama="olwa.txt"
 # Check Ubuntu version
   print_center -ama "♻️CHECKING YOUR OPERATING SYSTEM"
+  sleep 1
   msg -bar3
   sleep 3
 if [ "$(lsb_release -rs)" = "8*|9*|10*|11*|16.04*|18.04*" ]; then
@@ -164,6 +165,19 @@ else
   echo "# Leave Everything to Us...                       #"
   echo "###################################################"
   echo ""
+
+print_progress() {
+    local percentage=$1
+    local progress=$((percentage / 2))  # Scale down to fit within 50 characters
+
+    printf "[%-50s] %d%%\r" $(printf "%-${progress}s" "#" | tr ' ' '#') "$percentage"
+}
+
+# Iterate from 0 to 100 in 5% increments and update the progress bar
+for i in {0..100..5}; do
+    print_progress "$i"
+    sleep 0.001  # Adjust the sleep duration for the desired speed of progress
+done
   sleep 6
   # [+get files ⇣⇣⇣+]
   source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module') &>/dev/null
