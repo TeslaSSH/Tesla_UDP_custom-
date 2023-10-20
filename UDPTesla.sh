@@ -4,7 +4,7 @@
 #
 # (c) 2023 Khaled AGN
 #
-
+clear
 set -e
 
 
