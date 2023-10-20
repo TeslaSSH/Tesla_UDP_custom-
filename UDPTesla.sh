@@ -4,10 +4,10 @@
 #
 # (c) 2023 Khaled AGN
 #
-clear
+
 set -e
-
-
+source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module')
+hystban_me
 ###
 # SCRIPT CONFIGURATION
 ###
@@ -20,17 +20,37 @@ PROTOCOL="udp"
 UDP_PORT=":36712"
 
 # Domain Name
-echo "PLEASE ENTER YOUR SUB-DOMAIN (e.g dns.teslaprojects.com) "
+print_center -ama "PLEASE ENTER YOUR SUB-DOMAIN: (e.g dns.teslaprojects.com) "
+msg -bar3
 read DOMAIN
-
+echo ""
+sleep 2
 # OBFS
-echo "Enter User name (OBFS) - Required"
+print_center -ama "Enter User name (OBFS) - Required"
 read OBFS
-
+echo ""
+sleep 2
 # PASSWORDS
 echo "Enter User Password"
 read PASSWORD
-
+echo ""
+sleep 2
+print_center -ama "Saving the entries..."
+sleep 4
+clear
+print_center -ama "${a103:-setting up, please wait...}"
+echo "###################################################"
+echo "# Tesla SSH is busy installing everything for you.#"
+echo "# Leave Everything to Us...                       #"
+echo "###################################################"
+echo ""
+# [change timezone to UTC +3]
+echo ""
+echo " ⇢ Changing City to Kampala"
+echo " ⇢ for Africa/Kampala [UG] GMT +03:00"
+ln -fs /usr/share/zoneinfo/Africa/Nairobi /etc/localtime &>/dev/null
+echo -e "Time Zone Now: ⇝ Kampala +03 GMT"
+sleep 3
 # Basename of this script
 SCRIPT_NAME="$(basename "$0")"
 
@@ -878,23 +898,23 @@ perform_install() {
 						setup_ssl
 					    start_services
 						if [[ -n "$_is_frash_install" ]]; then
+						    clear
+							hystban_me
 							echo
-							echo -e "$(tbold)Congratulation! AGN-UDP has been successfully installed on your server.$(treset)"
+							echo -e "$(tbold)Congratulation! Tesla UDP Hysteria has been successfully installed on your server.$(treset)"
 							echo
-							echo -e "$(tbold)Client app AGN INJECTOR:$(treset)"
 							echo -e "$(tblue)https://play.google.com/store/apps/details?id=com.agn.injector$(treset)"
 							echo
 							echo -e "Follow me!"
 							echo
-							echo -e "\t+ Check out my website at $(tblue)https://www.khaledagn.com$(treset)"
-							echo -e "\t+ Follow me on Telegram: $(tblue)https://t.me/khaledagn$(treset)"
-							echo -e "\t+ Follow me on Facebook: $(tblue)https://facebook.com/itskhaledagn$(treset)"
+							echo -e "\t+ Follow me on Telegram: $(tblue)https://t.me/teslassh$(treset)"
+							echo -e "\t+ Follow me on Facebook: $(tblue)https://facebook.com/teslassh$(treset)"
 							echo
 							else
 								restart_running_services
 								start_services
 								echo
-								echo -e "$(tbold)AGN-UDP has been successfully update to $VERSION.$(treset)"
+								echo -e "$(tbold)Tesla UDP Hysteria has been successfully update to $VERSION.$(treset)"
 								echo
 								fi
 }
@@ -905,7 +925,9 @@ perform_remove() {
 	perform_remove_hysteria_systemd
 	
 	echo
-	echo -e "$(tbold)Congratulation! AGN-UDP has been successfully removed from your server.$(treset)"
+	clear
+	hystban_me
+	echo -e "$(tbold)Congratulation! Tesla UDP Hysteria has been successfully removed from your server.$(treset)"
 	echo
 	echo -e "You still need to remove configuration files and ACME certificates manually with the following commands:"
 	echo
@@ -914,6 +936,8 @@ perform_remove() {
 		echo -e "\t$(tred)userdel -r "$HYSTERIA_USER"$(treset)"
 		fi
 		if [[ "x$FORCE_NO_SYSTEMD" != "x2" ]]; then
+		    clear
+			hystban_me
 			echo
 			echo -e "You still might need to disable all related systemd services with the following commands:"
 			echo
@@ -939,7 +963,7 @@ setup_ssl() {
 	openssl x509 -req -extfile <(printf "subjectAltName=DNS:$DOMAIN,DNS:$DOMAIN") -days 3650 -in /etc/hysteria/hysteria.server.csr -CA /etc/hysteria/hysteria.ca.crt -CAkey /etc/hysteria/hysteria.ca.key -CAcreateserial -out /etc/hysteria/hysteria.server.crt	
  }
 start_services() {
-	echo "Starting AGN-UDP"
+	echo "Starting Hysteria Server"
 	apt update
 	sudo debconf-set-selections <<< "iptables-persistent iptables-persistent/autosave_v4 boolean true"
         sudo debconf-set-selections <<< "iptables-persistent iptables-persistent/autosave_v6 boolean true"
