@@ -20,19 +20,20 @@ PROTOCOL="udp"
 UDP_PORT=":36712"
 
 # Domain Name
+echo ""
 print_center -ama "PLEASE ENTER YOUR SUB-DOMAIN: (e.g dns.teslaprojects.com) "
-msg -bar3
-read DOMAIN
+
+read -p "DOMAIN:" DOMAIN
 echo ""
 sleep 2
 # OBFS
 print_center -ama "Enter User name (OBFS) - Required"
-read OBFS
+read -p "Username:" OBFS
 echo ""
 sleep 2
 # PASSWORDS
 echo "Enter User Password"
-read PASSWORD
+read -p "Password:" PASSWORD
 echo ""
 sleep 2
 print_center -ama "Saving the entries..."
@@ -44,13 +45,15 @@ echo "# Tesla SSH is busy installing everything for you.#"
 echo "# Leave Everything to Us...                       #"
 echo "###################################################"
 echo ""
+sleep 3
 # [change timezone to UTC +3]
 echo ""
 echo " ⇢ Changing City to Kampala"
 echo " ⇢ for Africa/Kampala [UG] GMT +03:00"
+sleep 3
 ln -fs /usr/share/zoneinfo/Africa/Nairobi /etc/localtime &>/dev/null
 echo -e "Time Zone Now: ⇝ Kampala +03 GMT"
-sleep 3
+sleep 4
 # Basename of this script
 SCRIPT_NAME="$(basename "$0")"
 
