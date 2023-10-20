@@ -63,7 +63,25 @@ msg() {
   -bar11) cor="${COLOR[1]}╰═════════════════════════════════╯" && echo -e "${SEMCOR}${cor}${SEMCOR}" ;;
  esac
 }
+# echo the Banners
+hystban_me() {
+  clear
+    clear
+  echo -e " _____ _____ ____  _        _      ____ ____  _   _ "
+  echo -e "|_   _| ____/ ___|| |      / \    / ___/ ___|| | | |"
+  echo -e "  | | |  _| \___ \| |     / _ \   \___ \___ \| |_| |"
+  echo -e "  | | | |___ ___) | |___ / ___ \   ___) |__) |  _  |"
+  echo -e "  |_| |_____|____/|_____/_/   \_\ |____/____/|_| |_|"
+  print_center -ama ' Version: 4.3'
+  print_center -ama ' Tesla UDP Hysteria'
+  print_center -ama ' Client Apps : HTTP Injector'
+  ram=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
+  cpu=$(printf '%-1s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
+  # print_center -ama " $(msg -verd 'IP:') $(msg -azu "$request_public_ip")  $(msg -verd 'Ram:') $(msg -azu "$ram") $(msg -verd 'CPU:') $(msg -azu "$cpu")"
+  echo " $(msg -verd ' ⇢  IP:') $(msg -azu "$request_public_ip")  $(msg -verd 'Ram:') $(msg -azu "$ram") $(msg -verd 'CPU:') $(msg -azu "$cpu")"
+  msg -bar
 
+}
 # 🔹text centering
 print_center() {
   if [[ -z $2 ]]; then
