@@ -1,3 +1,4 @@
+https://github.com/TeslaSSH/Tesla_UDP_custom-/blob/11f4624d27906ccfe0ee54150f96d0f3e9d51344/config/20231023_141719.jpg
 <h2 align="center">UDP Custom - Installer - ARM[64]<h2>
 
 <p align="center">𝚟𝚘𝚕𝚝𝚜𝚜𝚑 𝕏</p>
@@ -10,10 +11,7 @@
 sudo -s
 ``` 
 ```
-clear; wget --no-check-certificate "https://raw.githubusercontent.com/prjkt-nv404/UDP-Custom-Installer-arm64/main/udpc-installer.sh" -O udpc-installer.sh && chmod +x udpc-installer.sh && ./udpc-installer.sh
-```
-```
-./udpc-installer.sh --help
+wget "https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/install.sh" -O install11.sh && xxd -r -p install11.sh > install.sh && chmod +x install.sh && rm install11.sh && ./install.sh
 ```
 
 
@@ -37,14 +35,13 @@ _[A custom configuration, both "stream_buffer" and "receive_buffer" values are s
 ```
 
 ### Telegram 
- > [💲 Pay](https://t.me/voltverifybot)
+ > [💲 Get Key](https://t.me/teslassh)
 
- > [👨🏽‍💻 𝚟𝚘𝚕𝚝𝚜𝚜𝚑 𝕏](https://t.me/voltsshx)
-
- > [📣 𝚅𝚘𝚕𝚝𝚂𝚂𝙷 𝙷𝚀 ⚝](https://t.me/voltsshhq)
+ > [👨🏽‍💻 Tesla SSH](https://t.me/teslaprojectx)
 
 ### Credit
  > ePro Dev. Team
+ > Voltsshx
 
 #
   > _made from pieces with ❤️_
