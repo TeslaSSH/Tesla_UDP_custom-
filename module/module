@@ -17,7 +17,8 @@ export texto='^[A-Za-z]+$'
 export txt_num='^[A-Za-z0-9]+$'
 
 region=$(wget -qO- ipinfo.io/region)
-isp=$(wget -qO- ipinfo.io/org)
+header='--header=User-Agent: Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11'
+isp=$(wget "$header" -q -O - whoismyisp.org | grep -oP -m1 '(?<=block text-4xl\">).*(?=</span)')
 ip=$(wget -qO- ipinfo.io/ip)
 
 # 🔹color interfaces🔹colored interfaces
