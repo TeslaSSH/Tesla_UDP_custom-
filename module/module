@@ -2,7 +2,7 @@
 
 case $newlang in
 en_US)
-  a_enter=' ⇢  Press enter to continue'
+  a_enter=' ⇢  Press enter ↩ to continue'
   a_back=' ⇢  RETURN'
   a_selection_fun=' ⇢  Select an option:'
   ;;
@@ -189,7 +189,7 @@ title_sub() {
 # completion of tasks🔹home
 enter() {
   
-  text="⇒ ${a_enter:-Press enter to continue} ↩"
+  text="You can ${a_enter:-Hit enter ↩ to continue}"
   if [[ -z $1 ]]; then
     print_center -ama "$text"
   else
@@ -198,16 +198,26 @@ enter() {
   read
 }
 
+# option, return back/back🔹option, 🔹back 2 menu
+back2back() {
+ read -p "Go back to UDP Menu?" confm
+ sleep 2
+ case $confm in
+   [Yy]* ) menu_udp_custom ;;
+   [Nn]* ) menu_main
+}
+esac
+
 # option, return back/back🔹option, go back go back
 back() {
   msg -bar
-  echo -ne "$(msg -verd " [0]") $(msg -verm2 ">") " && msg -bra "\033[1;41m${a_back:-GO BACK}"
+  echo -ne "$(msg -verd " [0]") $(msg -verm2 ">") " && msg -bra "\033[1;45m${a_back:-RETURN}"
   msg -bar0
 }
 
 exit2home() {
   msg -bar
-  echo -ne "$(msg -verd " [0]") $(msg -verm2 "↶") " && msg -bra "\033[1;41m${a_back:-EXIT}"
+  echo -ne "$(msg -verd " [0]") $(msg -verm2 "↶") " && msg -bra "\033[1;45m${a_back:-EXIT}"
   msg -bar0
 }
 
@@ -311,6 +321,7 @@ export -f menu_func
 export -f print_center
 export -f title
 export -f back
+export -f back2back
 export -f inst
 export -f enter
 export -f in_option
