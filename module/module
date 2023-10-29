@@ -223,7 +223,6 @@ back2back() {
  case $confm in
    [Yy]* ) menu_udp_custom ;;
    [Nn]* ) menu_main ;;
-   * ) menu_udp_custom ;;
 }
 
 
