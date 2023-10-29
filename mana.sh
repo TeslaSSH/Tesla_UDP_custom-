@@ -6,9 +6,6 @@ echo -e "  | | |  _| \___ \| |     / _ \   \___ \___ \| |_| |"
 echo -e "  | | | |___ ___) | |___ / ___ \   ___) |__) |  _  |"
 echo -e "  |_| |_____|____/|_____/_/   \_\ |____/____/|_| |_|"
 echo ""
-region=$(wget -qO- ipinfo.io/region)
-isp=$(wget -qO- ipinfo.io/org)
-ip=$(wget -qO- ipinfo.io/ip)
 source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module')
 msg -bar
 echo -e "\t\033[92mA product of  : Tesla Projects Kampala" 
