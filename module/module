@@ -216,13 +216,11 @@ exit2home() {
 
 
 # option, return back/back🔹option, 🔹back 2 menu
-back2back() {
- read -p "Go back to UDP Menu?" confm
+back2back() { 
+ read -p "Press Enter to Go back to UDP Menu" confm
  sleep 2
  case $confm in
-   [Yy]* ) menu_udp_custom ;;
-   [Nn]* ) menu_main
- esac
+   * ) menu_udp_custom
 }
 
 

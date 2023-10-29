@@ -168,9 +168,9 @@ data_user() {
 
     unset stat
     if [[ $(passwd --status $u | cut -d ' ' -f2) = "P" ]]; then
-      stat="$(msg -verd "ULK")"
+      stat="$(msg -verd "✅")"
     else
-      stat="$(msg -verm2 "BLK")"
+      stat="$(msg -verm2 "❌")"
     fi
 
     Limit=$(echo "$line" | awk -F ':' '{print $5}' | cut -d ',' -f1)
@@ -805,7 +805,7 @@ tweak_udp_speed() {
   clear
   echo ""
   msg -bar
-  echo "$(msg -verm2 "${a3:-  A RISK TO YOUR SYSTEM}")"
+  echo "$(msg -verm2 "${a3:-  DONT OVER DO IT}")"
   sleep 2
   echo "$(msg -verm2 "${a8:-  ⇢ patching...}")"
   sleep 2
@@ -1019,7 +1019,7 @@ menu_main() {
   # print options menu
   print_center -ama "${a12:-CHOOSE AN OPTION}"
   msg -bar3
-  echo " $(msg -verd "[1]") $(msg -verm2 '>') $(msg -verd "${a6:-UDP Custom♞}")"
+  echo " $(msg -verd "[1]") $(msg -verm2 '>') $(msg -teal "${a6:-UDP Custom♞}")"
   # echo " $(msg -verd "[2]") $(msg -verm2 '>') $(msg -ama "${a8:-UDP Request}")"
   echo " $(msg -verd "[3]") $(msg -verm2 '>') $(msg -teal "${a11:-Speed Boost⚡}")"
   echo " $(msg -verd "[4]") $(msg -verm2 '>') $(msg -teal "${a10:-VPS Info🌦️}")"
