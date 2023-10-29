@@ -16,6 +16,10 @@ export numero='^[0-9]+$'
 export texto='^[A-Za-z]+$'
 export txt_num='^[A-Za-z0-9]+$'
 
+region=$(wget -qO- ipinfo.io/region)
+isp=$(wget -qO- ipinfo.io/org)
+ip=$(wget -qO- ipinfo.io/ip)
+
 # 🔹color interfaces🔹colored interfaces
 msg() {
    COLOR[0]='\033[1;37m'  #BRAN='\033[1;37m'
@@ -197,6 +201,19 @@ enter() {
   fi
   read
 }
+# option, return back/back🔹option, go back go back
+back() {
+  msg -bar
+  echo -ne "$(msg -verd " [0]") $(msg -verm2 ">") " && msg -bra "\033[1;41m${a_back:-RETURN}"
+  msg -bar0
+}
+
+exit2home() {
+  msg -bar
+  echo -ne "$(msg -verd " [0]") $(msg -verm2 "↶") " && msg -bra "\033[1;41m${a_back:-EXIT}"
+  msg -bar0
+}
+
 
 # option, return back/back🔹option, 🔹back 2 menu
 back2back() {
@@ -205,21 +222,9 @@ back2back() {
  case $confm in
    [Yy]* ) menu_udp_custom ;;
    [Nn]* ) menu_main
-}
-esac
-
-# option, return back/back🔹option, go back go back
-back() {
-  msg -bar
-  echo -ne "$(msg -verd " [0]") $(msg -verm2 ">") " && msg -bra "\033[1;45m${a_back:-RETURN}"
-  msg -bar0
+ esac
 }
 
-exit2home() {
-  msg -bar
-  echo -ne "$(msg -verd " [0]") $(msg -verm2 "↶") " && msg -bra "\033[1;45m${a_back:-EXIT}"
-  msg -bar0
-}
 
 inst() {
   print_center -verm2 "${a9:-❗ Please goto Github and reinstall the tool}"
