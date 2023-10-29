@@ -222,8 +222,8 @@ back2back() {
  sleep 2
  case $confm in
    [Yy]* ) menu_udp_custom ;;
-   [Nn]* ) menu_main;;
-   * ) menu_udp_custom
+   [Nn]* ) menu_main ;;
+   * ) menu_udp_custom ;;
 }
 
 
