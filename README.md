@@ -2,9 +2,9 @@
 ---
 <center><img src="https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/bin/Screenshot_20231102-123852~3.png" alt="banner" width="400"/></center>
 
----
+UDP (User Datagram Protocol) is a network communication protocol that operates on top of IP (Internet Protocol). It is a simpler protocol compared to TCP (Transmission Control Protocol), as it aims for speed rather than reliability. 
 
-I'm a software engineer and cloud engineer with a passion for building innovative solutions. I specialize in Bash, Python, and C++ programming languages and have experience working with cloud technologies such as AWS, Azure, and Google Cloud.
+---
 
 ## 🛠️ Technologies & Tools
 
