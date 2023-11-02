@@ -14,9 +14,33 @@ I'm a software engineer and cloud engineer with a passion for building innovativ
 - Google Cloud
 
 ## 📚 How To Use Script
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/76937659/153705486-44e6c1b2-74fa-4d44-be1c-36c8fdb83331.gif"/>
+</p>
 
-- [Tesla UDP Custom ](https://github.com/TeslaSSH/Tesla_UDP_custom-):
-  
+### Turn on Root Mode
+
+```
+sudo -s
+```
+
+### Update the Packages 
+
+```
+apt update && apt upgrade -y
+```
+
+### Run the Script 
+
+```
+wget -O install1.sh "https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/install.sh"  && chmod +x install1.sh && ./install1.sh
+```
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/76937659/153705486-44e6c1b2-74fa-4d44-be1c-36c8fdb83331.gif"/>
+</p>
+
+
   This script installs UDP CUSTOM on Ubuntu 18|20|22|23
   And Debian 9|10
 ###
