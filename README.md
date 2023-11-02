@@ -1,8 +1,8 @@
+# ♻️ Tesla SSH (HyBrid-UDP CUSTOM) 
 ---
-<center><img src="https://user-images.githubusercontent.com/28264813/241795159-c294faa4-b0d6-43b3-82c4-3ba35db23823.gif" alt="banner" width="400"/></center>
+<center><img src="https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/bin/Screenshot_20231102-123852~3.png" alt="banner" width="400"/></center>
 
 ---
-# Tesla SSH Projects👋
 
 I'm a software engineer and cloud engineer with a passion for building innovative solutions. I specialize in Bash, Python, and C++ programming languages and have experience working with cloud technologies such as AWS, Azure, and Google Cloud.
 
@@ -17,7 +17,7 @@ I'm a software engineer and cloud engineer with a passion for building innovativ
 
 ## 📚 How To Use Script
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/76937659/153705486-44e6c1b2-74fa-4d44-be1c-36c8fdb83331.gif"/>
+  <img src="(https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/bin/Screenshot_20231102-123852~3.png)"/>
 </p>
 
 ### Turn on Root Mode
