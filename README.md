@@ -1,5 +1,7 @@
+---
+<center><img src="https://user-images.githubusercontent.com/28264813/241795159-c294faa4-b0d6-43b3-82c4-3ba35db23823.gif" alt="banner" width="400"/></center>
 
-## Welcome To 
+---
 # Tesla SSH Projects👋
 
 I'm a software engineer and cloud engineer with a passion for building innovative solutions. I specialize in Bash, Python, and C++ programming languages and have experience working with cloud technologies such as AWS, Azure, and Google Cloud.
