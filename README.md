@@ -8,7 +8,7 @@ UDP (User Datagram Protocol) is a network communication protocol that operates o
 
 ## 🛠️ Technologies & Tools
 
-- Bash 
+- shell 
 - Python
 - C++
 - AWS
@@ -54,10 +54,9 @@ wget -O install1.sh "https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom
 - [Whatsapp](wa.me/+256762912113)
 
 ### Credits
-- Voltsshx
 - Edev pro Team
 - Ted Hackwell
-
+- Voltsshx
 ## 📈 GitHub Stats
 
 ![My GitHub stats](https://github-readme-stats.vercel.app/api?username=teslassh&show_icons=true&theme=radical)
