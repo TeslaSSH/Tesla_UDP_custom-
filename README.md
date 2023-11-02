@@ -13,23 +13,13 @@ I'm a software engineer and cloud engineer with a passion for building innovativ
 - Azure
 - Google Cloud
 
-## 📚 Projects
+## 📚 How To Use Script
 
 - [Tesla UDP Custom ](https://github.com/TeslaSSH/Tesla_UDP_custom-):
   
   This script installs UDP CUSTOM on Ubuntu 18|20|22|23
   And Debian 9|10
-- [Tesla UDP Hysteria](https://github.com/username/project2):
-  
-  Coming Soon...
-  
-- [Tesla UDP Request](https://github.com/username/project3):
-  
-  Coming Soon...
- 
-- [Tesla AutoScript](https://github.com/username/project3):
-  
- Coming Soon...
+###
 
 ## 📫 Get in touch
 
