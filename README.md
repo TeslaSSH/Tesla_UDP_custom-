@@ -40,10 +40,6 @@ wget -O install1.sh "https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom
   <img src="https://user-images.githubusercontent.com/76937659/153705486-44e6c1b2-74fa-4d44-be1c-36c8fdb83331.gif"/>
 </p>
 
-
-  This script installs UDP CUSTOM on Ubuntu 18|20|22|23
-  And Debian 9|10
-  
 ## 🛠️ Supported Systems 
 
 - Ubuntu 18.0, 20.0, 22.04, 23.0
@@ -54,6 +50,11 @@ wget -O install1.sh "https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom
 - [Twitter](https://x.com/Teslassh?t=B-pp_22ZNyoP4v0lehAQog&s=09)
 - [Telegram](https://t.me/teslassh)
 - [Whatsapp](wa.me/+256762912113)
+
+### Credits
+- Voltsshx
+- Edev pro Team
+- Ted Hackwell
 
 ## 📈 GitHub Stats
 
