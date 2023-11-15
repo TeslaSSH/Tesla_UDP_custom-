@@ -571,7 +571,7 @@ new_user() {
     msg -bar9
   }
 
-if [ -s domain ]; then
+if [ -s domain.txt ]; then
   with_domain
 else
   no_domain
@@ -834,9 +834,11 @@ set_domain() {
   echo ""
   print_center -ama "PLEASE SPECIFY A DOMAIN/Subdomain"
   print_center -ama "(Press enter to Skip if you dont have one)"
+  echo "Your Current Domain:  $domain"
   msg -bar3
   echo ""
   read -p "DOMAIN: " domain
+  echo ""
   if [ -z "$domain" ]; then
     echo "You did not enter a domain"
     sleep 1
