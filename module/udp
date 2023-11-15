@@ -836,7 +836,7 @@ set_domain() {
   print_center -ama "(Press enter to Skip if you dont have one)"
   msg -bar3
   echo ""
-  read "DOMAIN: " domain
+  read -p "DOMAIN: " domain
   if [ -z "$domain" ]; then
     echo "You did not enter a domain"
     sleep 1
