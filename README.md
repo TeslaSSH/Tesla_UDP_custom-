@@ -38,7 +38,7 @@ apt update && apt upgrade -y
 ### Run the Script 
 
 ```
-wget -O install1.sh "https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/install.sh"  && chmod +x install1.sh && ./install1.sh
+rm -f install.sh; wget --no-cache  "https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/install.sh" -O install.sh && chmod +x install.sh && ./install.sh
 ```
 
 <p align="center">
