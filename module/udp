@@ -9,16 +9,16 @@ Info="${Green_font_prefix}[Informacion]${Font_color_suffix}"
 Error="${Red_font_prefix}[Error]${Font_color_suffix}"
 Tip="${Green_font_prefix}[Atencion]${Font_color_suffix}"
 print_blue() {
-    echo -e "\e[34m$1\e[0m"
+    echo -e "\e[1;34m$1\e[0m"
 }
 print_yellow() {
-    echo -e "\e[34m$1\e[0m"
+    echo -e "\e[1;33m$1\e[0m"
 }
 print_pink() {
-    echo -e "\e[95m$1\e[0m"
+    echo -e "\e[1;95m$1\e[0m"
 }
 print_viola() {
-    echo -e "\e[35m$1\e[0m"
+    echo -e "\e[1;35m$1\e[0m"
 }
 
 
@@ -1164,9 +1164,9 @@ menu_main() {
   clear
   print_pink " _____ _____ ____  _        _      ____ ____  _   _ "
   print_pink "|_   _| ____/ ___|| |      / \    / ___/ ___|| | | |"
-  print_blue "  | | |  _| \___ \| |     / _ \   \___ \___ \| |_| |"
-  print_blue "  | | | |___ ___) | |___ / ___ \   ___) |__) |  _  |"
-  print_yellow "  |_| |_____|____/|_____/_/   \_\ |____/____/|_| |_|"                               
+  print_viola "  | | |  _| \___ \| |     / _ \   \___ \___ \| |_| |"
+  print_viola "  | | | |___ ___) | |___ / ___ \   ___) |__) |  _  |"
+  print_pink "  |_| |_____|____/|_____/_/   \_\ |____/____/|_| |_|"                               
   echo ""
   msg -bar
   # calculate RAM and CPU usage
