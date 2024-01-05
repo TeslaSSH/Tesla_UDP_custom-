@@ -8,6 +8,19 @@ Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_p
 Info="${Green_font_prefix}[Informacion]${Font_color_suffix}"
 Error="${Red_font_prefix}[Error]${Font_color_suffix}"
 Tip="${Green_font_prefix}[Atencion]${Font_color_suffix}"
+print_blue() {
+    echo -e "\e[34m$1\e[0m"
+}
+print_yellow() {
+    echo -e "\e[34m$1\e[0m"
+}
+print_pink() {
+    echo -e "\e[95m$1\e[0m"
+}
+print_viola() {
+    echo -e "\e[35m$1\e[0m"
+}
+
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1149,11 +1162,11 @@ menu_main() {
   #print_center -ama 'by Tesla SSH'
   #msg -bar
   clear
-  echo -e " _____ _____ ____  _        _      ____ ____  _   _ "
-  echo -e "|_   _| ____/ ___|| |      / \    / ___/ ___|| | | |"
-  echo -e "  | | |  _| \___ \| |     / _ \   \___ \___ \| |_| |"
-  echo -e "  | | | |___ ___) | |___ / ___ \   ___) |__) |  _  |"
-  echo -e "  |_| |_____|____/|_____/_/   \_\ |____/____/|_| |_|"                               
+  print_pink " _____ _____ ____  _        _      ____ ____  _   _ "
+  print_pink "|_   _| ____/ ___|| |      / \    / ___/ ___|| | | |"
+  print_blue "  | | |  _| \___ \| |     / _ \   \___ \___ \| |_| |"
+  print_blue "  | | | |___ ___) | |___ / ___ \   ___) |__) |  _  |"
+  print_yellow "  |_| |_____|____/|_____/_/   \_\ |____/____/|_| |_|"                               
   echo ""
   msg -bar
   # calculate RAM and CPU usage
@@ -1171,7 +1184,7 @@ menu_main() {
   echo " $(msg -verd "[2]") $(msg -verm2 '>') $(msg -ama "${a8:-Add Domain/Subdomain}")"
   echo " $(msg -verd "[3]") $(msg -verm2 '>') $(msg -teal "${a11:-Speed Boost⚡}")"
   echo " $(msg -verd "[4]") $(msg -verm2 '>') $(msg -teal "${a10:-VPS Info🌦️}")"
-  echo " $(msg -verd "[4]") $(msg -verm2 '>') $(msg -teal "${a10:-Enable BBR Algorithm}")"
+  echo " $(msg -verd "[5]") $(msg -verm2 '>') $(msg -teal "${a10:-Enable BBR Algorithm}")"
   echo " $(msg -verd "[99]") $(msg -verm2 '>') $(msg -ama "${a8:-Remove Domain}")"
   echo " $(msg -verd "[10]") $(msg -verm2 '>') $(msg -verm2 "${a3:-Uninstall UDP Manager}")"
   exit2home
