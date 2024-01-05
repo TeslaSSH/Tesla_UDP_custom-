@@ -1,11 +1,26 @@
 #!/bin/bash
+print_blue() {
+    echo -e "\e[1;34m$1\e[0m"
+}
+print_yellow() {
+    echo -e "\e[1;33m$1\e[0m"
+}
+print_pink() {
+    echo -e "\e[1;95m$1\e[0m"
+}
+print_viola() {
+    echo -e "\e[1;35m$1\e[0m"
+}
 clear
-echo -e " _____ _____ ____  _        _      ____ ____  _   _ "
-echo -e "|_   _| ____/ ___|| |      / \    / ___/ ___|| | | |"
-echo -e "  | | |  _| \___ \| |     / _ \   \___ \___ \| |_| |"
-echo -e "  | | | |___ ___) | |___ / ___ \   ___) |__) |  _  |"
-echo -e "  |_| |_____|____/|_____/_/   \_\ |____/____/|_| |_|"
+print_pink " _____ _____ ____  _        _      ____ ____  _   _ "
+print_pink "|_   _| ____/ ___|| |      / \    / ___/ ___|| | | |"
+print_blue "  | | |  _| \___ \| |     / _ \   \___ \___ \| |_| |"
+print_yellow "  | | | |___ ___) | |___ / ___ \   ___) |__) |  _  |"
+print_yellow "  |_| |_____|____/|_____/_/   \_\ |____/____/|_| |_|" 
 echo ""
+region=$(wget -qO- ipinfo.io/region)
+isp=$(wget -qO- ipinfo.io/org)
+ip=$(wget -qO- ipinfo.io/ip)
 source <(curl -sSL 'https://raw.githubusercontent.com/TeslaSSH/Tesla_UDP_custom-/main/module/module')
 msg -bar
 echo -e "\t\033[92mA product of  : Tesla Projects Kampala" 
