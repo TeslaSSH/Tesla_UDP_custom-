@@ -1107,11 +1107,11 @@ menu_udp_custom() {
   # title "\033[3;40m${a10:-•UDP Custom | UDP Request Manager} by @teslassh•"
   #title_sub "\033[3;40m${a10:-•TESLA SSH PLOJECTS} by Teslassh•"
   clear
-  echo -e " _____ _____ ____  _        _      ____ ____  _   _ "
-  echo -e "|_   _| ____/ ___|| |      / \    / ___/ ___|| | | |"
-  echo -e "  | | |  _| \___ \| |     / _ \   \___ \___ \| |_| |"
-  echo -e "  | | | |___ ___) | |___ / ___ \   ___) |__) |  _  |"
-  echo -e "  |_| |_____|____/|_____/_/   \_\ |____/____/|_| |_|"
+  print_pink " _____ _____ ____  _        _      ____ ____  _   _ "
+  print_pink "|_   _| ____/ ___|| |      / \    / ___/ ___|| | | |"
+  print_blue "  | | |  _| \___ \| |     / _ \   \___ \___ \| |_| |"
+  print_yellow "  | | | |___ ___) | |___ / ___ \   ___) |__) |  _  |"
+  print_yellow "  |_| |_____|____/|_____/_/   \_\ |____/____/|_| |_|" 
   echo ""
   print_center -ama ' UDP HyBrid v4.7'
   print_center -ama ' Client App : HTTP Custom'
@@ -1164,9 +1164,9 @@ menu_main() {
   clear
   print_pink " _____ _____ ____  _        _      ____ ____  _   _ "
   print_pink "|_   _| ____/ ___|| |      / \    / ___/ ___|| | | |"
-  print_viola "  | | |  _| \___ \| |     / _ \   \___ \___ \| |_| |"
-  print_viola "  | | | |___ ___) | |___ / ___ \   ___) |__) |  _  |"
-  print_pink "  |_| |_____|____/|_____/_/   \_\ |____/____/|_| |_|"                               
+  print_blue "  | | |  _| \___ \| |     / _ \   \___ \___ \| |_| |"
+  print_yellow "  | | | |___ ___) | |___ / ___ \   ___) |__) |  _  |"
+  print_yellow "  |_| |_____|____/|_____/_/   \_\ |____/____/|_| |_|"                               
   echo ""
   msg -bar
   # calculate RAM and CPU usage
