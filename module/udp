@@ -884,6 +884,12 @@ Nbeast() {
 # Menú de inicio
 booster() {
 	clear
+  print_pink " _____ _____ ____  _        _      ____ ____  _   _ "
+  print_pink "|_   _| ____/ ___|| |      / \    / ___/ ___|| | | |"
+  print_blue "  | | |  _| \___ \| |     / _ \   \___ \___ \| |_| |"
+  print_yellow "  | | | |___ ___) | |___ / ___ \   ___) |__) |  _  |"
+  print_yellow "  |_| |_____|____/|_____/_/   \_\ |____/____/|_| |_|" 
+  echo ""
 	msg -bar3
 	msg -tit
 	echo -e " TRAFFIC CONTROL MANAGER ${Red_font_prefix}By Teslassh${Font_color_suffix}
@@ -892,15 +898,15 @@ booster() {
   ${Green_font_prefix}[ 2 ]${Font_color_suffix} Speed ​​up VPS With BBRplus
   ${Green_font_prefix}[ 3 ]${Font_color_suffix} Stop VPS Accelerator
   ${Green_font_prefix}[ 4 ]${Font_color_suffix} Network Beast
-  ${Green_font_prefix}[ 0 ]${Font_color_suffix} Exit script" && msg -bar
+  ${Green_font_prefix}[ 0 ]${Font_color_suffix} Exit Manager" && msg -bar
 
 	run_status=$(grep "net.ipv4.tcp_congestion_control" /etc/sysctl.conf | awk -F "=" '{print $2}')
 	if [[ ${run_status} ]]; then
-		echo -e " Actual state: ${Green_font_prefix}installed\n${Font_color_suffix} ${_font_prefix}BBR Comenzó exitosamente${Font_color_suffix} Kernel Acelerado, ${amarillo}${run_status}${Font_color_suffix}"
+		echo -e " Actual state: ${Green_font_prefix}installed\n${Font_color_suffix} ${_font_prefix}BBR started successfully.${Font_color_suffix} Accelerated Kernel., ${amarillo}${run_status}${Font_color_suffix}"
 	else
-		echo -e " Actual state: ${Green_font_prefix}Not installed\n${Font_color_suffix} Kernel Acelerado: ${Red_font_prefix}Por favor,instale el Acelerador primero.${Font_color_suffix}"
+		echo -e " Actual state: ${Green_font_prefix}Not installed\n${Font_color_suffix} Accelerated Kernel.: ${Red_font_prefix}Please install the Accelerator first.${Font_color_suffix}"
 	fi
-	msg -bar
+	msg -bar0
 	read -p "$(echo -e "\e[31m► ${bla}Select An Option [0-3]:${amarillo}") " londa
 	case "$londa" in
 	0) ;;
@@ -1029,6 +1035,35 @@ vps_info() {
   msg -bar0
   enter
 }
+domang() {
+  clear
+  print_pink " _____ _____ ____  _        _      ____ ____  _   _ "
+  print_pink "|_   _| ____/ ___|| |      / \    / ___/ ___|| | | |"
+  print_blue "  | | |  _| \___ \| |     / _ \   \___ \___ \| |_| |"
+  print_yellow "  | | | |___ ___) | |___ / ___ \   ___) |__) |  _  |"
+  print_yellow "  |_| |_____|____/|_____/_/   \_\ |____/____/|_| |_|" 
+  echo ""
+  msg -bar
+  print_pink "UDP DOMAIN MANAGER. By @teslassh"
+  msg -bar0
+  print_center -ama "QUICK MENU"
+  msg -bar3
+  echo " $(msg -verd "[1]") $(msg -verm2 '>') $(msg -teal "${a6:-Add Domain♞}")"
+  echo " $(msg -verd "[2]") $(msg -verm2 '>') $(msg -ama "${a8:-Remove Domain}")"
+  exit2home
+  read -p " ⇢  Enter your selection: " option
+  case $option in
+    1)
+      set_domain
+     ;;
+    2)
+      remove_dom
+     ;;
+    0)
+      exit
+     ;;
+   esac
+}
 
 # [UDP - Request]
 menu_udp_request() {
@@ -1107,6 +1142,7 @@ menu_udp_custom() {
   # title "\033[3;40m${a10:-•UDP Custom | UDP Request Manager} by @teslassh•"
   #title_sub "\033[3;40m${a10:-•TESLA SSH PLOJECTS} by Teslassh•"
   clear
+
   print_pink " _____ _____ ____  _        _      ____ ____  _   _ "
   print_pink "|_   _| ____/ ___|| |      / \    / ___/ ___|| | | |"
   print_blue "  | | |  _| \___ \| |     / _ \   \___ \___ \| |_| |"
@@ -1181,11 +1217,11 @@ menu_main() {
   print_center -ama "${a12:-CHOOSE AN OPTION}"
   msg -bar3
   echo " $(msg -verd "[1]") $(msg -verm2 '>') $(msg -teal "${a6:-UDP Custom♞}")"
-  echo " $(msg -verd "[2]") $(msg -verm2 '>') $(msg -ama "${a8:-Add Domain/Subdomain}")"
+  echo " $(msg -verd "[2]") $(msg -verm2 '>') $(msg -ama "${a8:-Domain Manager}")"
   echo " $(msg -verd "[3]") $(msg -verm2 '>') $(msg -teal "${a11:-Speed Boost⚡}")"
   echo " $(msg -verd "[4]") $(msg -verm2 '>') $(msg -teal "${a10:-VPS Info🌦️}")"
   echo " $(msg -verd "[5]") $(msg -verm2 '>') $(msg -teal "${a10:-Enable BBR Algorithm}")"
-  echo " $(msg -verd "[99]") $(msg -verm2 '>') $(msg -ama "${a8:-Remove Domain}")"
+  #echo " $(msg -verd "[99]") $(msg -verm2 '>') $(msg -ama "${a8:-Remove Domain}")"
   echo " $(msg -verd "[10]") $(msg -verm2 '>') $(msg -verm2 "${a3:-Uninstall UDP Manager}")"
   exit2home
 
@@ -1198,7 +1234,7 @@ menu_main() {
     menu_udp_custom
     ;;
   2)
-    set_domain
+    domang
     ;;
   3)
     not_assigend
@@ -1212,9 +1248,9 @@ menu_main() {
   10)
     uninstall_udp_manager
     ;;
-  99)
-    remove_dom
-    ;;
+  #99)
+    #remove_dom
+   # ;;
   0)
     exit
     ;;
@@ -1224,3 +1260,4 @@ menu_main() {
 while [[ $? -eq 0 ]]; do
   menu_main
 done
+
