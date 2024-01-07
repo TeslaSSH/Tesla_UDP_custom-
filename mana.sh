@@ -30,11 +30,11 @@ echo ""
 DATE=$(date +"%d-%m-%y")
 TIME=$(date +"%T")
 echo -e "\t\e[1;33mServer Location : $region"
-echo -e "\t\e[1;33mServer Provider : $isp"
+echo -e "\t\e[1;33mUDP Provider : NextCloud Tech"
 echo -e "\t\e[1;33mServer IP : $ip"
 echo -e "\t\e[1;33mServer Date : $DATE"
 echo "" 
 echo "TO SEE MENU, TYPE: sudo udp or udp"
-msg -bar3
+msg -bar3 
 echo -e ""
 exit
